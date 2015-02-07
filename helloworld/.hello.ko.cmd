@@ -1,1 +1,0 @@
-cmd_/home/prasad/Downloads/helloworld/hello.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.13.0-45-generic/scripts/module-common.lds --build-id  -o /home/prasad/Downloads/helloworld/hello.ko /home/prasad/Downloads/helloworld/hello.o /home/prasad/Downloads/helloworld/hello.mod.o
