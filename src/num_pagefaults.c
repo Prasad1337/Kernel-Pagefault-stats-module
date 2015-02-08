@@ -13,9 +13,8 @@ MODULE_AUTHOR("Prasad");
 MODULE_DESCRIPTION("Number of pagefaults");
 
 static int num_pagefaults_show(struct seq_file *m, void *v) {
-	long p=(long)this_cpu_inc_return(vm_event_states.event[PGFAULT]);
-	this_cpu_dec(vm_event_states.event[PGFAULT]);
-	--p;
+	this_cpu_inc(vm_event_states.event[PGFAULT]);
+	long p=(long)this_cpu_dec_return(vm_event_states.event[PGFAULT]);
 	seq_printf(m, "%ld\n",p);
   return 0;
 }
